@@ -10,7 +10,7 @@ import LevelUp from "../../public/images/level-up-opt.jpg";
 import EpicFilm from "../../public/images/epic-film-opt.jpg";
 import Crowds from "../../public/images/crowds-opt.jpg";
 import Atmosphere from "../../public/images/atmosphere-opt.jpg";
-import Foley from "../../public/images/Foley-opt.jpg";
+import Foley from "../../public/images/foley-opt.jpg";
 import ScienceFiction from "../../public/images/science-fiction-opt.jpg";
 import Image from 'next/image';
 

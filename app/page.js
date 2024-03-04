@@ -1,11 +1,16 @@
+import BoxSection from "./components/BoxSection";
+import ThirdSectionHome from "./components/ThirdSectionHome";
+import TopSection from "./components/TopSection";
+import TrendingSound from "./components/TrendingSound";
 
 
 export default function Home() {
   return (
-  <div>
-    <h1>
-      hello wolrd
-    </h1>
-  </div>
+ <main>
+  <TopSection />
+  <BoxSection />
+  <ThirdSectionHome/>
+  <TrendingSound />
+ </main>
   );
 }

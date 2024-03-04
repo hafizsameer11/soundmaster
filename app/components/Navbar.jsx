@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <div className="menu flex justify-between">
+    <div className="menu flex  items-center justify-between">
       <div className="logo">
-        <Image src="" />
+        
       </div>
       <div className="">
         <ul className="menu-ul flex justify-between">

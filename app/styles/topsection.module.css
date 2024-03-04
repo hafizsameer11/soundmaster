@@ -1,0 +1,15 @@
+.topsection{
+  background-image: url('../../public/clef-1439137_1280.jpg');
+ /* background-color: black; */
+    /* height: ; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    padding: 80px 60px;
+    padding-top: 190px;
+    height: 90vh;
+
+  }
+  

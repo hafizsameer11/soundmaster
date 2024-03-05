@@ -1,10 +1,5 @@
-import React from "react";
-import Image from 'next/image';
-// import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
+import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import upbeat from "../../public/images/upbeat-opt.jpg";
 import electronic from "../../public/images/electronic-opt.jpg";
 import soundscape from "../../public/images/soundscapes-opt.jpg";
@@ -13,8 +8,42 @@ import lofi from "../../public/images/lofi-hip-hop-opt.jpg";
 import indie from "../../public/images/indie-rock-opt.jpg";
 import classica from "../../public/images/classical-opt.jpg";
 import hopefull from "../../public/images/hopeful-acoustics-opt.jpg";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
 export default function Audio() {
+  const tabContentsRef = useRef(null);
+  const [showLeftButton, setShowLeftButton] = useState(false);
+  const [showRightButton, setShowRightButton] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = tabContentsRef.current;
+      if (container) {
+        setShowLeftButton(container.scrollLeft > 0);
+        setShowRightButton(container.scrollLeft + container.offsetWidth >= container.scrollWidth * 0.9);
+      }
+    };
+
+    const container = tabContentsRef.current;
+    if (container) {
+      container.addEventListener("scroll", handleScroll);
+      return () => {
+        container.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
+
+  const scroll = (direction) => {
+    const container = tabContentsRef.current;
+    if (container) {
+      const scrollAmount = direction === "left" ? -container.offsetWidth : container.offsetWidth;
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
+
   const backgroundImage = [
     {
       text: "Upbeat",
@@ -33,47 +62,48 @@ export default function Audio() {
       url: timetodance,
     },
     {
-        text: "LoFi Hip Hop",
-        url: lofi,
-      },
-      {
-        text: "Indie Rock",
-        url: indie,
-      },
-      {
-        text: "Classical",
-        url: classica,
-      },
-      {
-        text: "Hopeful Acoustics",
-        url: hopefull,
-      },
+      text: "LoFi Hip Hop",
+      url: lofi,
+    },
+    {
+      text: "Indie Rock",
+      url: indie,
+    },
+    {
+      text: "Classical",
+      url: classica,
+    },
+    {
+      text: "Hopeful Acoustics",
+      url: hopefull,
+    },
   ];
-  const backgroundImage2 = [
- 
-  ];
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 200,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    // autoplaySpeed:2000,
-    // arrows: true, 
-  };
+
   return (
-    <div className='w-[75%] m-auto'>
-    <h1 className="text-[26px]  cat-names ">Audio</h1>
-        
-    <Slider {...settings}>
-      {backgroundImage.map((item, index) => (
-        <div key={index} className="tab-content" >
-        <Image className='tab-conten-img' src={item.url} width={180} height={180} />
-          <h2 className='tab-content-text'>{item.text}</h2>
-        </div>
-      ))}
-    </Slider>
-    </div>
+    <>
+      <h1 className="text-[26px] cat-names">Audio</h1>
+      <div className="tab-contents" ref={tabContentsRef}>
+        {showLeftButton && (
+          <button className="scroll-button arrow-btn-left left" onClick={() => scroll("left")}>
+            <FaCaretLeft />
+          </button>
+        )}
+        {backgroundImage.map((item, index) => (
+          <div
+            key={index}
+            className="tab-content"
+            style={{ backgroundImage: `url(${item.url.src})` }}
+          >
+            <div className="image-container"></div>
+            <h2 className="tab-content-text">{item.text}</h2>
+          </div>
+        ))}
+        {showRightButton && (
+          <button className="scroll-button right arrow-btn-right" onClick={() => scroll("right")}>
+            <FaCaretRight />
+          </button>
+        )}
+      </div>
+    </>
   );
 }

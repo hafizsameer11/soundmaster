@@ -259,9 +259,11 @@ position: relative;
   margin-right: -20px;
 }
 .footer {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   margin-top: 80px !important;
-  padding: 60px 100px;
+  border-top: 1px solid rgba(218, 206, 206, 0.484);
+  color: black !important;
+  padding: 60px 20px;
 }
 .footer-logo {
   width: 120px;
@@ -283,7 +285,7 @@ position: relative;
   bottom: 20px;
   right: 20px;
   background-color: var(--primary-color);
-  color: #fff;
+  color: black;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -319,6 +321,7 @@ main {
 }
 
 .search-form {
+  width: 290px;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
@@ -412,4 +415,35 @@ main {
   background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value (0.1) to control the opacity */
   color: black !important;
 
+}
+/*  explore tab */
+.explore-tabs{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 90px;
+  justify-content: space-between;
+
+}
+.explore-tab{
+  width: 256px;
+  height: 129px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.explore-tab:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 256px; /* Same width as parent */
+  height: 129px; /* Same height as parent */
+  background-color: #EBE7EE; /* Color of the overlay */
+  border-radius: 12px; /* Ensure the overlay has the same border-radius as the tab */
+  opacity: 0.5; /* Adjust the opacity of the overlay as needed */
 }

@@ -81,7 +81,7 @@ export default function TrendingSound() {
                 <Image src={item.img} width={47} height={47} />
                 {hoveredIndex === index && (
                   <a
-                    className="play-btn absolute top-0 start-0 transform translate-x-1/2 translate-y-1/2"
+                    className="play-btn absolute top-2 start-2 transform translate-x-1/2 translate-y-1/2"
                     href="#"
                   >
                     <svg

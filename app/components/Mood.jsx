@@ -33,7 +33,7 @@ export default function Mood() {
       const container = tabContentsRef.current;
       if (container) {
         setShowLeftButton(container.scrollLeft > 0);
-        showRightButton(true);
+        setShowRightButton(true);
         // setShowRightButton(container.scrollLeft + container.offsetWidth >= container.scrollWidth * 0.9);
       }
     };

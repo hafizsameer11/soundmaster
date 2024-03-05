@@ -1,4 +1,5 @@
 // import BoxSection from "./components/BoxSection";
+import { Explora } from "next/font/google";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
 import Rotatingcirlce from "./components/Rotaingcirlce";
@@ -6,6 +7,8 @@ import Sidebar from "./components/Sidebar";
 import ThirdSectionHome from "./components/ThirdSectionHome";
 import TopSection from "./components/TopSection";
 import TrendingSound from "./components/TrendingSound";
+import Explore from "./components/Explore";
+import Footer from "./components/Footer";
 
 
 // pages/index.js
@@ -21,6 +24,8 @@ export default function Home() {
         <TopSection />
         <ThirdSectionHome />
         <TrendingSound />
+        <Explore />
+        <Footer/>
         {/* <Rotatingcirlce/> */}
       </div>
     </main>

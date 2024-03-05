@@ -9,7 +9,7 @@ import { FaQuestion } from 'react-icons/fa';
 
 export default function Sidebar() {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const [bottomactiveinde,setbottonactiveindex]=useState(-1)
+  const [bottomactiveinde,setbottonactiveindex]=useState(false)
 
   const menu = [
     {
@@ -42,7 +42,7 @@ export default function Sidebar() {
     setActiveIndex(index);
   };
   const handleItemClickbottome = (index) => {
-    setbottonactiveindex(index);
+   setbottonactiveindex(!bottomactiveinde)
   };
 
   return (
@@ -51,7 +51,7 @@ export default function Sidebar() {
         <SVGComponent />
       </div>
       <div className='sideba-menu-div'>
-        <ul className='sidebar-menu mt-[80px]'>
+        <ul className='sidebar-menu mt-[30px]'>
           {menu.map(({ text, icon }, index) => (
             <li className={`mb-5 ${index === activeIndex ? 'active-li' : ''}`} key={index}>
               <a href='#' className='flex items-center gap-[12px]' onClick={() => handleItemClick(index)}>
@@ -65,7 +65,7 @@ export default function Sidebar() {
       <div className='sideba-menu-div'>
         <ul className='sidebar-menu mt-[80px]'>
           {bottom_menu.map(({ text, icon,indexx }, index) => (
-            <li className={`mb-5 ${indexx === bottomactiveinde ? 'active-li' : ''}`} key={index}>
+            <li className={`mb-5 ${bottomactiveinde ? 'active-li' : ''}`} key={index}>
               <a href='#' className='flex items-center gap-[12px]' onClick={() => handleItemClickbottome(indexx)}>
                 <span>{icon}</span>
                 <span>{text}</span>

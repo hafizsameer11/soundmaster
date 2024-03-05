@@ -1,6 +1,7 @@
 // import BoxSection from "./components/BoxSection";
 import Main from "./components/Main";
 import Navbar from "./components/Navbar";
+import Rotatingcirlce from "./components/Rotaingcirlce";
 import Sidebar from "./components/Sidebar";
 import ThirdSectionHome from "./components/ThirdSectionHome";
 import TopSection from "./components/TopSection";
@@ -18,8 +19,9 @@ export default function Home() {
       <div className="main">
 <Navbar/>    
         <TopSection />
-        <TrendingSound />
         <ThirdSectionHome />
+        <TrendingSound />
+        {/* <Rotatingcirlce/> */}
       </div>
     </main>
   );

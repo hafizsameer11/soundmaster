@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Wrapping Around Circular Boundary</title>
+<style>
+    .container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border: 2px solid #000;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="text" id="rotating-text">
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ante dapibus diam.</span>
+    </div>
+</div>
+
+<script>
+    const textContainer = document.getElementById('rotating-text');
+    const text = textContainer.innerText;
+    const radius = 150; // Half of the container's width/height
+
+    for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.innerText = text[i];
+        span.style.position = 'absolute';
+        span.style.left = `${Math.cos((i / text.length) * Math.PI * 2) * radius + radius}px`;
+        span.style.top = `${Math.sin((i / text.length) * Math.PI * 2) * radius + radius}px`;
+        textContainer.appendChild(span);
+    }
+
+    textContainer.style.visibility = 'hidden'; // Hide the original text container
+
+    let angle = 0;
+    setInterval(() => {
+        angle += 0.1;
+        textContainer.style.transform = `rotate(${angle}deg)`;
+    }, 50);
+</script>
+</body>
+</html>

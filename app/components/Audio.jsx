@@ -8,6 +8,15 @@ import lofi from "../../public/images/lofi-hip-hop-opt.jpg";
 import indie from "../../public/images/indie-rock-opt.jpg";
 import classica from "../../public/images/classical-opt.jpg";
 import hopefull from "../../public/images/hopeful-acoustics-opt.jpg";
+import hopeAI from "../../public/imagess/AI-innovation_2347155710352502.jpeg";
+import Broll from "../../public/imagess/B-Roll_Winter_23_1650312869235209.jpeg";
+import Brand from "../../public/imagess/Brand-New-In_6584687793083866.jpeg";
+import Inspired from "../../public/imagess/Inspired-by_Dune_6122150460496892.jpeg";
+import Into from "../../public/imagess/Into-the-wild_1860188083015263.jpeg";
+import MemeMeme from "../../public/imagess/Meme-Sounds-2024_SFX_2939672628365819.jpeg";
+import Movie from "../../public/imagess/Movie-Magic_6841687230556247.jpeg";
+import Phonk from "../../public/imagess/Phonk_1744365208192584.jpeg";
+import Uppbeat_Book from "../../public/imagess/Uppbeat_Book-Day_Crime_2_1859574040110816.jpeg";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
 export default function Audio() {
@@ -20,10 +29,11 @@ export default function Audio() {
       const container = tabContentsRef.current;
       if (container) {
         setShowLeftButton(container.scrollLeft > 0);
-        setShowRightButton(container.scrollLeft + container.offsetWidth >= container.scrollWidth * 0.9);
+        setShowRightButton(true);
+        // setShowRightButton(container.scrollLeft + container.offsetWidth >= container.scrollWidth * 0.9);
       }
     };
-
+  
     const container = tabContentsRef.current;
     if (container) {
       container.addEventListener("scroll", handleScroll);
@@ -32,6 +42,7 @@ export default function Audio() {
       };
     }
   }, []);
+  
 
   const scroll = (direction) => {
     const container = tabContentsRef.current;
@@ -76,6 +87,42 @@ export default function Audio() {
     {
       text: "Hopeful Acoustics",
       url: hopefull,
+    },
+    {
+      text:"",
+      url:hopeAI
+    },
+    {
+      text:"",
+      url:Broll
+    },
+    {
+      text:"",
+      url:Inspired
+    },
+    {
+      text:"",
+      url:Into
+    },
+    {
+      text:"",
+      url:Uppbeat_Book
+    },
+    {
+      text:"",
+      url:MemeMeme
+    },
+    {
+      text:"",
+      url:Movie
+    },
+    {
+      text:"",
+      url:Phonk
+    },
+    {
+      text:"",
+      url:Brand
     },
   ];
 

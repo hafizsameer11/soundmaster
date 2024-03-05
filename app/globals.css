@@ -172,18 +172,18 @@ body{
   width: 180px !important;
   background-repeat: no-repeat;
   color: white;
-  padding-bottom: 20px;
   font-size: 18px;
   position: relative !important;
-  margin-top: 0px;
   align-items: end;
   background-size: cover;
   display: inline-flex;
   text-align: center;
   justify-content: center;
+  cursor: pointer;
   align-items: start;
-  padding-top: 20px;
+  padding-top: 5px;
   flex-shrink: 0; 
+  font-size: 14px;
 }
 
 .tab-contents {
@@ -194,7 +194,7 @@ position: relative;
   gap: 13px;
   display: flex; 
   flex-wrap: nowrap; 
-  margin-bottom: 52px;
+  margin-bottom: 12px;
   margin-top: 6px;
 }
 .tab-contents::-webkit-scrollbar {
@@ -224,12 +224,30 @@ position: relative;
   margin-left: 20px;
 }
 .trending-sound-box {
-  padding: 90px 20px 90px 20px;
+  padding: 90px 20px 10px 40px;
   box-shadow: 0 18px 76px -20px rgba(0, 0, 0, 0.24);
 }
 .trending-song {
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 12px;
   padding-right: 77px !important;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  
+}
+.trending-song:hover{
+  transition: all .3s ease-in-out;
+  background-color: #F4F6FA;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: scale(1.05);
+}
+.serial-number-song{
+  flex-basis: 2%;
+}
+.artisit{
+  flex-basis: 25%;
 }
 .trending-songs {
   margin-top: 20px;
@@ -280,11 +298,11 @@ position: relative;
 
 .sidebar {
   /* background-color: black; */
-  border-right: 1px solid black !important;
+  border-right: 1px solid rgba(152, 147, 147, 0.14) !important;
 
   height: 100vh;
   padding-left: 30px;
-padding-top: 30px;
+padding-top: 20px;
   overflow-y: hidden;
   position: sticky;
 }
@@ -332,7 +350,7 @@ main {
   color: white;
   padding: 0px 12px;
   height: 142px;
-  top: 32%;
+  top:8%;
   left: 0px;
   background-color: black;
   border-top-right-radius: 20px;
@@ -346,8 +364,13 @@ main {
 }
 .tab-contents:hover .arrow-btn-left{
   /* display: block; */
-  opacity: 0.8;
+  opacity: 0.5;
   
+}
+.logo{
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
 }
 .arrow-btn-right {
   position: sticky;
@@ -355,12 +378,12 @@ main {
   color: white;
   padding: 0px 12px;
   height: 142px;
-  top: 32%;
+  top: 10%;
   right: 0px;
   transition: all .3s ease-in-out;
   background-color: black;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 26px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 26px;
   z-index: 9;
   opacity: 0;
 }
@@ -370,4 +393,23 @@ main {
 .tab-contents:hover .arrow-btn-right{
   opacity: 0.8;
   
+}
+.sidebar-menu{
+  border-top: 1px solid rgba(152, 147, 147, 0.14) !important;
+  padding-top: 30px;
+}
+
+/* sidebar */
+.sidebar-menu li{
+  padding-left: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-right: 40px;
+  
+  color: gray ;
+}
+.active-li{
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value (0.1) to control the opacity */
+  color: black !important;
+
 }

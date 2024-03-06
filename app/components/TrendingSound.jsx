@@ -62,7 +62,7 @@ export default function TrendingSound() {
 
   return (
     <div className="trendingsounds">
-      <div className="trending-sound-box mt-[220px] mb-[120px]">
+      <div className="trending-sound-box mt-[70px] mb-[120px]">
         <h2 className="font-bold text-[30px]">Trending Songs</h2>
         <p className="text-[18px]">Check out whats popular in our library</p>
 

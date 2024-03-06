@@ -22,7 +22,7 @@
 .menu {
   width: 90%;
   margin: auto;
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 0.833em;
   font-weight: 500;
 }
@@ -72,7 +72,7 @@
 
 .white-heading-text {
   color: var(--secondary-color);
-  font-size: 3.4375rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
@@ -139,7 +139,7 @@ body{
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
   /* margin-right: 90px; */
-  text-align: center;
+  text-align: left;
   gap: 20px;
   flex-direction: column;
   align-items: center;
@@ -321,12 +321,13 @@ main {
 }
 
 .search-form {
-  width: 290px;
+  width: 690px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 20px;
 }
 
 .search-icon {

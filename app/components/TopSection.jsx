@@ -18,11 +18,11 @@ export default function TopSection() {
     easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
   }
   return (
-    <Tilt options={defaultOptions} >
+   
 
     <div className={`${styles.topsection} top-section-box`}>
-      <h2 className="white-heading-text text-center">SOUND MARKET</h2>
-      <p className="text-white mt-[.2rem] text-center w-96 m-auto">
+      <h2 className="white-heading-text ">SOUND MARKET</h2>
+      <p className="text-white mt-[.2rem] w-96 ">
         Thousands Of Free Music Tracks For Content Creators Created by Award
         Winning Composers, Producers and Artists
       </p>
@@ -31,6 +31,6 @@ export default function TopSection() {
       
       </div>
     </div>
-    </Tilt>
+
   );
 }

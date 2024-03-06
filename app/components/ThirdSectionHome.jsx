@@ -9,6 +9,7 @@ import Discover from "./Discover";
 import Mood from "./Mood";
 import Theme from "./Theme";
 import Topcreaterchoice from "./Topcreatorpicks";
+import { FaSearch } from "react-icons/fa";
 
 export default function ThirdSectionHome() {
   const [activeTab, setActiveTab] = useState(0);
@@ -17,15 +18,11 @@ export default function ThirdSectionHome() {
     setActiveTab(index);
   };
   return (
-    <div className="mb-[60px] mt-[120px]">
-      <h2 className="text-black text-center text-[46px] font-bold">
-        Music, SFX, and Video for any project
-      </h2>
-      <p className="text-black w-[40%] m-auto text-center mt-6 mb-12">
-        Browse thousands of tracks curated by our music experts. Download full
-        songs including stems by Grammy-winning artists to take your project to
-        the next level.
-      </p>
+    <div className="mb-[60px] mt-[10px]">
+     <div className="search-form m-auto">
+          <FaSearch className="search-icon" />
+          <input type="text" placeholder="Search Any Music" />
+        </div>
 
 
       <Audio />
